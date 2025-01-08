@@ -35,4 +35,4 @@ Details about the project, its features, and how to use it will be added soon.
 ## Installation and Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/havenly.git
+   https://github.com/Shailly-Sahay/Havenly.com.git
