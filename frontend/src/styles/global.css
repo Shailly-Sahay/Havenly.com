@@ -50,26 +50,6 @@ button {
   font-family: "Montserrat", serif;
 }
 
-/* Font sizes */
-h1,
-h1.header {
-  @apply text-6xl;
-}
-
-p,
-p.fs-body-m {
-  @apply text-base;
-}
-
-p.fs-body-lg {
-  @apply text-lg;
-}
-
-a,
-a.button {
-  @apply text-xs;
-}
-
 /* Reusable color pallette classes */
 .bg-primary {
   background-color: var(--primary-color);
@@ -89,6 +69,27 @@ a.button {
 
 .text-light {
   color: var(--light-text-color);
+}
+
+/* Font sizes */
+
+p,
+p.fs-body-m {
+  @apply text-base;
+}
+
+p.fs-body-lg {
+  @apply text-lg;
+}
+
+a,
+a.button {
+  @apply text-xs;
+}
+
+h1,
+h1.header {
+  @apply text-5xl;
 }
 
 /* Reusable spacing */
