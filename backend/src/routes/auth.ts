@@ -21,7 +21,6 @@ authRouter.post(
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       res.status(400).json({ message: errors.array() });
-      return;
     }
 
     const { email, password } = req.body;
@@ -47,12 +46,11 @@ authRouter.post(
         { expiresIn: "1d" }
       );
 
-      res.cookie("auth token", token, {
+      res.cookie("auth_token", token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         maxAge: 86400000,
       });
-
       res.status(200).json({ userId: user._id });
 
       return;

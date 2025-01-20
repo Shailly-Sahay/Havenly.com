@@ -92,6 +92,10 @@ h1.header {
   @apply text-5xl;
 }
 
+h2,
+h2.header {
+  @apply text-3xl;
+}
 /* Reusable spacing */
 .section-pd-x {
   @apply px-[var(--spacing-lg)];

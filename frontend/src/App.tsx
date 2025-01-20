@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Layout from "./layouts/layout";
+import { Register } from "./pages";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +28,15 @@ function App() {
             element={
               <Layout>
                 <p>Search page</p>
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/register"
+            element={
+              <Layout>
+                <Register />{" "}
               </Layout>
             }
           />
