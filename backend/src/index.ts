@@ -1,23 +1,25 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
+import router from "./routes";
 
+const port = process.env.PORT || 7000;
+
+// Connect to MongoDB
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 const app = express();
 
-app.use(express.json());
+// Middleware
+app.use(express.json()); // To parse JSON bodies
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/api/test", async (req: Request, res: Response) => {
-  res.json({ message: "hello" });
-});
+// Mount all routes at /api
+app.use("/api", router);
 
-app.listen(7000, () => {
-  console.log("SERVER");
+// Start server
+app.listen(port, () => {
+  console.log("SERVER is running on http://localhost:7000");
 });
-
-// mOXpbm2DI0w10gwd
-// admin
