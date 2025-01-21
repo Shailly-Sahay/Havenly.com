@@ -48,7 +48,6 @@ userRouter.post(
       res.status(200).send({ message: "User registered succesfully!" });
       return;
     } catch (error) {
-      console.log(error);
       res.status(500).send({ message: "Something went wrong" });
     }
   }
