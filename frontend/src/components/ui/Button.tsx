@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 
 interface ButtonProps {
   text: string; // Button text
-  href: string; // Link target
+  href?: string; // Link target, optional
   size?: "small" | "medium" | "large"; // Button size
-  className?: string; // Custom Tailwind classes
+  className?: string; // Additional CSS classes
+  type?: "button" | "submit" | "reset"; // Button type
+  onClick?: () => void; // Function to trigger on click
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -13,20 +15,25 @@ const Button: React.FC<ButtonProps> = ({
   href,
   size = "medium", // Default size
   className = "",
+  type = "button", // Default type
+  onClick, // Click handler
 }) => {
   const sizeClasses = {
-    small: "py-1 px-3 ",
-    medium: "py-2 px-4 ",
-    large: "py-3 px-6 ",
+    small: "py-1 px-3",
+    medium: "py-2 px-4",
+    large: "py-3 px-6",
   };
 
-  return (
-    <Link
-      to={href}
-      className={`button inline-block font-semibold text-center hover:opacity-90 transition-opacity ${sizeClasses[size]} ${className}`}
-    >
+  const commonClasses = `button rounded inline-block font-semibold text-center hover:opacity-90 transition-opacity ${sizeClasses[size]} ${className}`;
+
+  return href ? (
+    <Link to={href} className={commonClasses} onClick={onClick}>
       {text}
     </Link>
+  ) : (
+    <button type={type} className={commonClasses} onClick={onClick}>
+      {text}
+    </button>
   );
 };
 
