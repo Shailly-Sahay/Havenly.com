@@ -45,7 +45,7 @@ userRouter.post(
         secure: process.env.NODE_ENV === "production",
         maxAge: 86400000,
       });
-      res.sendStatus(200);
+      res.status(200).send({ message: "User registered succesfully!" });
       return;
     } catch (error) {
       console.log(error);

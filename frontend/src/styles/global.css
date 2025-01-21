@@ -39,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Now Text", sans-serif;
+  font-family: "Helvetica Now Text", serif;
   font-weight: normal;
 }
 
@@ -75,7 +75,6 @@ button {
 
 span,
 span.fs-body-sm,
-,
 p.fs-body-sm {
   @apply text-xs;
 }
@@ -110,6 +109,10 @@ h2.header {
 
 .text-input {
   @apply border rounded w-full py-1 px-2 font-normal;
+}
+
+.text-muted {
+  @apply font-normal;
 }
 /* Reusable spacing */
 .section-pd-x {

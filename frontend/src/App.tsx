@@ -1,16 +1,13 @@
-import { useState } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
 } from "react-router-dom";
-import Layout from "./layouts/layout";
+import { PrimaryLayout } from "./layouts";
 import { Register } from "./pages";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Router>
@@ -18,26 +15,26 @@ function App() {
           <Route
             path="/"
             element={
-              <Layout>
+              <PrimaryLayout>
                 <p>Home page</p>
-              </Layout>
+              </PrimaryLayout>
             }
           />
           <Route
             path="/search"
             element={
-              <Layout>
+              <PrimaryLayout>
                 <p>Search page</p>
-              </Layout>
+              </PrimaryLayout>
             }
           />
 
           <Route
             path="/register"
             element={
-              <Layout>
-                <Register />{" "}
-              </Layout>
+              <PrimaryLayout>
+                <Register />
+              </PrimaryLayout>
             }
           />
           <Route path="*" element={<Navigate to="/" />} />
