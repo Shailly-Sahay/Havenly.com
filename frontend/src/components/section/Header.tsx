@@ -26,7 +26,11 @@ const Header = () => {
           </>
         ) : (
           <span className="flex space-x-2">
-            <Button text="Sign in" href="/" className="bg-light text-dark" />
+            <Button
+              text="Sign in"
+              href="/sign-in"
+              className="bg-light text-dark"
+            />
           </span>
         )}
       </div>
