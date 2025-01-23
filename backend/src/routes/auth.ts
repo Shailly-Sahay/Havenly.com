@@ -3,6 +3,7 @@ import { check, validationResult } from "express-validator";
 import User from "../models/user";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import { verifyToken } from "../middlewares";
 
 const authRouter = express.Router();
 
@@ -58,6 +59,14 @@ authRouter.post(
       console.log(error);
       res.status(500).json({ message: "Something went wrong" });
     }
+  }
+);
+
+authRouter.get(
+  "/validate-token",
+  verifyToken,
+  (req: Request, res: Response) => {
+    res.status(200).send({ userId: req.userId });
   }
 );
 

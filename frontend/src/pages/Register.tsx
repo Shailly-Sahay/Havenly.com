@@ -3,6 +3,7 @@ import { Button } from "../components/ui";
 import * as apiClient from "../api/apiClient";
 import { useMutation } from "react-query";
 import { useAppContext } from "../contexts/AppContext";
+import { useNavigate } from "react-router-dom";
 
 export type RegisterFormData = {
   firstName: string;
@@ -13,6 +14,8 @@ export type RegisterFormData = {
 };
 
 const Register = () => {
+  const navigate = useNavigate();
+
   const { showToast } = useAppContext();
   const {
     register,
@@ -24,6 +27,7 @@ const Register = () => {
   const mutation = useMutation(apiClient.register, {
     onSuccess: () => {
       showToast({ message: "Registration succes", type: "SUCCESS" });
+      navigate("/");
     },
     onError: (error: Error) => {
       showToast({ message: error.message, type: "ERROR" });
@@ -35,7 +39,7 @@ const Register = () => {
   });
 
   return (
-    <form className="flex flex-col gap-5">
+    <form className="flex flex-col gap-5 lg:px-[10rem] 2xl:px-[22rem] ">
       <h2 className="header">Create an account</h2>
       <div className="flex flex-col md:flex-row gap-5">
         {/* First name */}

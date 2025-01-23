@@ -11,8 +11,8 @@
 
   /* Spacing */
   --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
+  --spacing-sm: 6rem;
+  --spacing-md: 12rem;
   --spacing-lg: 16rem; /*Used for section px*/
 
   /* Border */
@@ -116,5 +116,5 @@ h2.header {
 }
 /* Reusable spacing */
 .section-pd-x {
-  @apply px-[var(--spacing-lg)];
+  @apply px-[var(--spacing-sm)] md:px-[var(--spacing-md)] lg:px-[var(--spacing-lg)];
 }

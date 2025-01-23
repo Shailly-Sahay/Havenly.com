@@ -46,6 +46,18 @@ module.exports = {
         // 9XL: Use for display text on full-screen landing pages
         "9xl": ["12.8rem", { lineHeight: "1" }], // 128px
       },
+      screens: {
+        // Popular breakpoints
+        sm: "640px", // Small devices (phones)
+        md: "768px", // Medium devices (tablets)
+        lg: "1024px", // Large devices (desktops)
+        xl: "1280px", // Extra large devices
+        "2xl": "1536px", // Double extra large devices
+
+        // Custom breakpoints (if needed)
+        "3xl": "1920px", // Ultra-wide screens
+        "4xl": "2560px", // 4K screens
+      },
     },
   },
   plugins: [],
