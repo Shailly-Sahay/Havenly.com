@@ -4,10 +4,14 @@ import { Link } from "react-router-dom";
 interface LinkProps {
   text: string; // Button text
   href?: string; // Link target, optional
-  textColorClass?: string | "text-light";
+  textColorClass?: string; // Optional text color class
 }
 
-const PageLink: React.FC<LinkProps> = ({ text, href, textColorClass }) => {
+const PageLink: React.FC<LinkProps> = ({
+  text,
+  href,
+  textColorClass = "text-light", // Default value applied here
+}) => {
   return (
     <Link to={href || "#"} className="group relative inline-block">
       <span

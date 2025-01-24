@@ -3,15 +3,17 @@ import { useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../api/apiClient";
 import { Button } from "../components/ui";
 import { useAppContext } from "../contexts/AppContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export type SignInFormData = {
   email: string;
   password: string;
 };
 
+// 6985_shailly
+
 const SignIn = () => {
-  const { isLoggedIn, showToast } = useAppContext();
+  const { showToast } = useAppContext();
   const queryClient = useQueryClient();
 
   const navigate = useNavigate();
@@ -79,7 +81,12 @@ const SignIn = () => {
 
       {/* Submit button */}
       <span>
-        {" "}
+        <span>
+          Not Registered?{" "}
+          <Link to="/register" className="underline">
+            Click here to create an account
+          </Link>
+        </span>{" "}
         <Button
           text="Sign In"
           type="submit"

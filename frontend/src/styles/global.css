@@ -92,7 +92,7 @@ p.fs-body-m,
 a,
 a,
 button {
-  @apply text-xs text-light;
+  @apply text-xs;
 }
 
 h1,
