@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PageLink } from "../ui";
 
 const Footer = () => {
   return (
@@ -8,10 +9,10 @@ const Footer = () => {
         <Link to="/">
           <p className="fs-body-lg text-light tracking-tight">Havenly.com</p>
         </Link>
-        <span className="text-light tracking-tight">
-          <p className="cursor-pointer">Privacy Policy</p>
-          <p className="cursor-pointer">Terms of Service</p>
-        </span>
+        <div className="flex flex-col gap-y-4">
+          <PageLink text="Privacy Policy" href="/" />
+          <PageLink text="Terms of Service" href="/" />
+        </div>
       </div>
     </div>
   );

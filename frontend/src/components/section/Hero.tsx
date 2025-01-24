@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="bg-primary pb-16">
       <div className="section-pd-x flex flex-col gap-2">
         <h1 className="header text-light">Find your next stay</h1>
-        <p className="text-white">
+        <p className="fs-body-m  text-white">
           Search low prices on hotels for your dream vacation
         </p>
       </div>

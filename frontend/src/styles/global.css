@@ -8,6 +8,8 @@
   --dark-text-color: #2d1b17; /* Espresso Brown - Dark Text */
   --light-text-color: #f7f2e7; /* Ivory White */
   --border-color: #8d5a2d; /* Rich Brown */
+  --succes-color: #39e75f;
+  --error-color: red;
 
   /* Spacing */
   --spacing-xs: 4px;
@@ -73,24 +75,24 @@ button {
 
 /* Font sizes */
 
-span,
-span.fs-body-sm,
-p.fs-body-sm {
+.fs-body-sm {
   @apply text-xs;
 }
 
 p,
-p.fs-body-m {
+p.fs-body-m,
+.fs-body-m {
   @apply text-base;
 }
 
-p.fs-body-lg {
+.fs-body-lg {
   @apply text-lg;
 }
 
 a,
-a.button {
-  @apply text-xs;
+a,
+button {
+  @apply text-xs text-light;
 }
 
 h1,
@@ -101,6 +103,11 @@ h1.header {
 h2,
 h2.header {
   @apply text-3xl;
+}
+
+h3,
+h3.header {
+  @apply text-base;
 }
 
 .text-label {

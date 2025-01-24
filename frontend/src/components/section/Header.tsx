@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../ui";
+import { Button, PageLink } from "../ui";
 import { useAppContext } from "../../contexts/AppContext";
 import { useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../../api/apiClient";
@@ -32,15 +32,10 @@ const Header = () => {
         </Link>
 
         {isLoggedIn ? (
-          <div className="flex items-center space-x-4">
-            <Link to="/my-bookings">
-              <p className="fs-body-lg text-light tracking-tight">
-                My Bookings
-              </p>
-            </Link>
-            <Link to="/my-hotels">
-              <p className="fs-body-lg text-light tracking-tight">My Hotels</p>
-            </Link>
+          <div className="flex items-center space-x-8">
+            <PageLink text="My Bookings" href="/my-bookings" />
+            <PageLink text="My Hotels" href="/my-hotels" />
+
             <Button
               type="button"
               text="Sign out"
