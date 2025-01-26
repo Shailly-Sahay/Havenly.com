@@ -3,6 +3,7 @@ import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import router from "./routes";
+import cookieParser from "cookie-parser";
 
 const port = process.env.PORT || 7000;
 
@@ -10,11 +11,17 @@ const port = process.env.PORT || 7000;
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 const app = express();
+app.use(cookieParser());
 
 // Middleware
 app.use(express.json()); // To parse JSON bodies
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
 
 // Mount all routes at /api
 app.use("/api", router);

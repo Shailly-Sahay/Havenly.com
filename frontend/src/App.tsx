@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { PrimaryLayout } from "./layouts";
-import { Register } from "./pages";
+import { Register, SignIn } from "./pages";
 
 function App() {
   return (
@@ -34,6 +34,16 @@ function App() {
             element={
               <PrimaryLayout>
                 <Register />
+              </PrimaryLayout>
+            }
+          />
+
+          {/* Sign In */}
+          <Route
+            path="/sign-in"
+            element={
+              <PrimaryLayout>
+                <SignIn />
               </PrimaryLayout>
             }
           />

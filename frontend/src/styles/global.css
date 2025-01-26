@@ -8,11 +8,13 @@
   --dark-text-color: #2d1b17; /* Espresso Brown - Dark Text */
   --light-text-color: #f7f2e7; /* Ivory White */
   --border-color: #8d5a2d; /* Rich Brown */
+  --succes-color: #39e75f;
+  --error-color: red;
 
   /* Spacing */
   --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
+  --spacing-sm: 6rem;
+  --spacing-md: 12rem;
   --spacing-lg: 16rem; /*Used for section px*/
 
   /* Border */
@@ -73,23 +75,23 @@ button {
 
 /* Font sizes */
 
-span,
-span.fs-body-sm,
-p.fs-body-sm {
+.fs-body-sm {
   @apply text-xs;
 }
 
 p,
-p.fs-body-m {
+p.fs-body-m,
+.fs-body-m {
   @apply text-base;
 }
 
-p.fs-body-lg {
+.fs-body-lg {
   @apply text-lg;
 }
 
 a,
-a.button {
+a,
+button {
   @apply text-xs;
 }
 
@@ -101,6 +103,11 @@ h1.header {
 h2,
 h2.header {
   @apply text-3xl;
+}
+
+h3,
+h3.header {
+  @apply text-base;
 }
 
 .text-label {
@@ -116,5 +123,5 @@ h2.header {
 }
 /* Reusable spacing */
 .section-pd-x {
-  @apply px-[var(--spacing-lg)];
+  @apply px-[var(--spacing-sm)] md:px-[var(--spacing-md)] lg:px-[var(--spacing-lg)];
 }
