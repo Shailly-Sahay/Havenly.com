@@ -4,6 +4,9 @@ import "dotenv/config";
 import mongoose from "mongoose";
 import router from "./routes";
 import cookieParser from "cookie-parser";
+import path from "path";
+
+// Constants
 
 const port = process.env.PORT || 7000;
 
@@ -22,6 +25,8 @@ app.use(
     credentials: true,
   })
 );
+
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 // Mount all routes at /api
 app.use("/api", router);
