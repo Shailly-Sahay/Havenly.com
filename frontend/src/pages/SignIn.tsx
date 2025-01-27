@@ -26,7 +26,7 @@ const SignIn = () => {
   const mutation = useMutation(apiClient.signIn, {
     onSuccess: async () => {
       // Show toast message
-      showToast({ message: "Sign in Successful", type: "SUCCESS" });
+      showToast({ message: "Sign in Successfull", type: "SUCCESS" });
       // Invalidate auth_token
       await queryClient.invalidateQueries("validate-token");
       //   navigate to the home page
@@ -42,7 +42,10 @@ const SignIn = () => {
   });
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
+    <form
+      className="flex flex-col gap-5 lg:px-[10rem] 2xl:px-[22rem] "
+      onSubmit={onSubmit}
+    >
       <h2 className="text-3xl font-bold">Sign In</h2>
       <label className="text-label flex-1">
         Email
