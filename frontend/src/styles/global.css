@@ -35,6 +35,11 @@
 html {
   font-size: 62.5%;
 }
+
+body {
+  font-family: "Montserrat", serif;
+}
+
 h1,
 h2,
 h3,
@@ -43,13 +48,6 @@ h5,
 h6 {
   font-family: "Helvetica Now Text", serif;
   font-weight: normal;
-}
-
-p,
-span,
-a,
-button {
-  font-family: "Montserrat", serif;
 }
 
 /* Reusable color pallette classes */
@@ -102,16 +100,16 @@ h1.header {
 
 h2,
 h2.header {
-  @apply text-3xl;
+  @apply text-2xl text-gray-700;
 }
 
 h3,
 h3.header {
-  @apply text-base;
+  @apply text-xl text-gray-700;
 }
 
 .text-label {
-  @apply text-sm text-gray-700 font-bold;
+  @apply text-sm text-gray-700 mb-2;
 }
 
 .text-input {
@@ -121,7 +119,15 @@ h3.header {
 .text-muted {
   @apply font-normal;
 }
+
+.font-error {
+  @apply text-red-500 text-sm font-bold;
+}
 /* Reusable spacing */
 .section-pd-x {
   @apply px-[var(--spacing-sm)] md:px-[var(--spacing-md)] lg:px-[var(--spacing-lg)];
+}
+
+.form {
+  @apply lg:px-[10rem] 2xl:px-[22rem];
 }

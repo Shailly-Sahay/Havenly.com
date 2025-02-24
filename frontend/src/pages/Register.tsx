@@ -43,7 +43,7 @@ const Register = () => {
   });
 
   return (
-    <form className="flex flex-col gap-5 lg:px-[10rem] 2xl:px-[22rem] ">
+    <form className="flex flex-col gap-5 form">
       <h2 className="header">Create an account</h2>
       <div className="flex flex-col md:flex-row gap-5">
         {/* First name */}

@@ -10,8 +10,6 @@ export type SignInFormData = {
   password: string;
 };
 
-// 6985_shailly
-
 const SignIn = () => {
   const { showToast } = useAppContext();
   const queryClient = useQueryClient();
@@ -42,10 +40,7 @@ const SignIn = () => {
   });
 
   return (
-    <form
-      className="flex flex-col gap-5 lg:px-[10rem] 2xl:px-[22rem] "
-      onSubmit={onSubmit}
-    >
+    <form className="flex flex-col form gap-5" onSubmit={onSubmit}>
       <h2 className="text-3xl font-bold">Sign In</h2>
       <label className="text-label flex-1">
         Email

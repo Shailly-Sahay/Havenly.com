@@ -5,9 +5,15 @@ import mongoose from "mongoose";
 import router from "./routes";
 import cookieParser from "cookie-parser";
 import path from "path";
+import { v2 as cloudinary } from "cloudinary";
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 // Constants
-
 const port = process.env.PORT || 7000;
 
 // Connect to MongoDB
