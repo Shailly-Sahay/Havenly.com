@@ -10,8 +10,6 @@ export type SignInFormData = {
   password: string;
 };
 
-// 6985_shailly
-
 const SignIn = () => {
   const { showToast } = useAppContext();
   const queryClient = useQueryClient();
@@ -26,7 +24,7 @@ const SignIn = () => {
   const mutation = useMutation(apiClient.signIn, {
     onSuccess: async () => {
       // Show toast message
-      showToast({ message: "Sign in Successful", type: "SUCCESS" });
+      showToast({ message: "Sign in Successfull", type: "SUCCESS" });
       // Invalidate auth_token
       await queryClient.invalidateQueries("validate-token");
       //   navigate to the home page
@@ -42,7 +40,7 @@ const SignIn = () => {
   });
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
+    <form className="flex flex-col form gap-5" onSubmit={onSubmit}>
       <h2 className="text-3xl font-bold">Sign In</h2>
       <label className="text-label flex-1">
         Email
@@ -89,9 +87,9 @@ const SignIn = () => {
         </span>{" "}
         <Button
           text="Sign In"
-          type="submit"
+          action="submit"
           size="large"
-          className=" bg-primary text-light"
+          type="secondary"
           onClick={onSubmit}
         />
       </span>

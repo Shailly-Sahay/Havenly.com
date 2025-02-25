@@ -27,7 +27,7 @@ const Register = () => {
 
   const mutation = useMutation(apiClient.register, {
     onSuccess: async () => {
-      showToast({ message: "Registration succes", type: "SUCCESS" });
+      showToast({ message: "Registration Successfull", type: "SUCCESS" });
 
       // Invalidate auth-token
       await queryClient.invalidateQueries("validate-token");
@@ -43,7 +43,7 @@ const Register = () => {
   });
 
   return (
-    <form className="flex flex-col gap-5 lg:px-[10rem] 2xl:px-[22rem] ">
+    <form className="flex flex-col gap-5 form">
       <h2 className="header">Create an account</h2>
       <div className="flex flex-col md:flex-row gap-5">
         {/* First name */}
@@ -141,9 +141,9 @@ const Register = () => {
         {" "}
         <Button
           text="Create Account"
-          type="submit"
+          action="submit"
           size="large"
-          className=" bg-primary text-light"
+          type="secondary"
           onClick={onSubmit}
         />
       </span>

@@ -1,10 +1,19 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
 import router from "./routes";
 import cookieParser from "cookie-parser";
+import path from "path";
+import { v2 as cloudinary } from "cloudinary";
 
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// Constants
 const port = process.env.PORT || 7000;
 
 // Connect to MongoDB
@@ -23,8 +32,13 @@ app.use(
   })
 );
 
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
+
 // Mount all routes at /api
 app.use("/api", router);
+app.get("*", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+});
 
 // Start server
 app.listen(port, () => {

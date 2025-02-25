@@ -5,9 +5,12 @@ import {
   Navigate,
 } from "react-router-dom";
 import { PrimaryLayout } from "./layouts";
-import { Register, SignIn } from "./pages";
+import { Register, SignIn, AddHotel } from "./pages";
+import { useAppContext } from "./contexts/AppContext";
 
 function App() {
+  const { isLoggedIn } = useAppContext();
+
   return (
     <>
       <Router>
@@ -47,6 +50,20 @@ function App() {
               </PrimaryLayout>
             }
           />
+
+          {isLoggedIn && (
+            <>
+              <Route
+                path="/add-hotel"
+                element={
+                  <PrimaryLayout>
+                    <AddHotel />
+                  </PrimaryLayout>
+                }
+              />
+            </>
+          )}
+
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>

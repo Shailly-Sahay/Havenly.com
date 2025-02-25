@@ -28,6 +28,7 @@ const Toast = ({ message, type, onClose }: ToastProps) => {
 
   return (
     <div
+      data-testid={message}
       className={`fixed top-4 right-4 z-50 flex items-center gap-x-[4rem] p-4 shadow-md rounded-md bg-white ${
         isClosing ? "animate-slide-out" : "animate-slide-in"
       }`}
