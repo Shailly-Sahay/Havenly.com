@@ -34,8 +34,10 @@ const myHotels = {
       await hotel.save();
 
       res.status(201).send(hotel);
+      return;
     } catch (error) {
       res.status(500).json({ message: "Something went wrong" });
+      return;
     }
   },
 };

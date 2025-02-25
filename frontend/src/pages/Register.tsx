@@ -141,9 +141,9 @@ const Register = () => {
         {" "}
         <Button
           text="Create Account"
-          type="submit"
+          action="submit"
           size="large"
-          className=" bg-primary text-light"
+          type="secondary"
           onClick={onSubmit}
         />
       </span>

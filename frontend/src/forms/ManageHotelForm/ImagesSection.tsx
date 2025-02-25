@@ -16,7 +16,7 @@ const ImagesSection = () => {
           type="file"
           multiple
           accept="image/*"
-          className="w-full font-normal text-gray-700"
+          className="w-full text-input text-gray-700"
           {...register("imageFiles", {
             validate: (imageFiles) => {
               const totalLength = imageFiles.length;

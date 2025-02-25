@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import "dotenv/config";
 import mongoose from "mongoose";
@@ -36,6 +36,9 @@ app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 // Mount all routes at /api
 app.use("/api", router);
+app.get("*", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+});
 
 // Start server
 app.listen(port, () => {

@@ -87,9 +87,9 @@ const SignIn = () => {
         </span>{" "}
         <Button
           text="Sign In"
-          type="submit"
+          action="submit"
           size="large"
-          className=" bg-primary text-light"
+          type="secondary"
           onClick={onSubmit}
         />
       </span>

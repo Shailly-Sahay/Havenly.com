@@ -35,20 +35,11 @@ const Header = () => {
             <PageLink text="My Bookings" href="/my-bookings" />
             <PageLink text="My Hotels" href="/my-hotels" />
 
-            <Button
-              type="button"
-              text="Sign out"
-              onClick={handleSignOut}
-              className="bg-light text-dark"
-            />
+            <Button action="button" text="Sign out" onClick={handleSignOut} />
           </div>
         ) : (
           <div className="flex items-center space-x-2">
-            <Button
-              text="Sign in"
-              href="/sign-in"
-              className="bg-light text-dark"
-            />
+            <Button text="Sign in" href="/sign-in" />
           </div>
         )}
       </div>

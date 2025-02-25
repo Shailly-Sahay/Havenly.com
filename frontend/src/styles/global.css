@@ -113,7 +113,7 @@ h3.header {
 }
 
 .text-input {
-  @apply border rounded w-full py-1 px-2 font-normal;
+  @apply border rounded w-full py-1 px-2 font-normal outline-pink-600;
 }
 
 .text-muted {

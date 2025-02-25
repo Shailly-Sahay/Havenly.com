@@ -13,18 +13,15 @@ const FacilitiesSection = () => {
       <h3 className="mb-3">Facilites</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2">
         {hotelFacilities.map((facility) => (
-          <label className="flex gap-1 text-label">
+          <label key={facility} className="flex gap-1 text-label">
             <input
               type="checkbox"
               value={facility}
-              {...(register("facilities"),
-              {
-                validate: (facility) => {
-                  if (facility && facility.length > 0) {
-                    return true;
-                  } else {
-                    return "At least one facility is required";
-                  }
+              {...register("facilities", {
+                validate: (value) => {
+                  return (
+                    value.length > 0 || "At least one facility is required"
+                  );
                 },
               })}
             />

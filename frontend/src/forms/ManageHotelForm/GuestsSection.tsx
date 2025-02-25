@@ -20,8 +20,9 @@ const GuestsSection = () => {
               required: true,
             })}
           />
-          {errors.adultCount?.message} && (
-          <span className="font-error">{errors.adultCount?.message}</span>)
+          {errors.adultCount?.message && (
+            <span className="font-error">{errors.adultCount?.message}</span>
+          )}
         </label>
 
         <label className="text-label">
@@ -34,8 +35,9 @@ const GuestsSection = () => {
               required: true,
             })}
           />
-          {errors.childCount?.message} && (
-          <span className="font-error">{errors.childCount?.message}</span>)
+          {errors.childCount?.message && (
+            <span className="font-error">{errors.childCount?.message}</span>
+          )}
         </label>
       </div>
     </div>
