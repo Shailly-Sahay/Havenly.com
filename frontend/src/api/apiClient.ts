@@ -1,8 +1,7 @@
 // import { HotelFormData } from "../forms/ManageHotelForm/ManageHotelForm";
 import { RegisterFormData } from "../pages/Register";
 import { SignInFormData } from "../pages/SignIn";
-import { HotelType } from "../../../backend/src/models/hotels";
-
+import { HotelType } from "../../../backend/src/shared/types";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
 // Register a user

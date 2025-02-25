@@ -31,7 +31,9 @@ const MyHotels = () => {
             className="flex flex-col justify-between border rounded-lg p-8 gap-5"
           >
             <h3>{hotel.name}</h3>
-            <div className="whitespace-pre-line">{hotel.description}</div>
+            <div className="whitespace-pre-line">
+              <p>{hotel.description}</p>
+            </div>
             <div className="grid grid-cols-5 gap-2">
               <div className="border border-slate-300 rounded-sm p-3 flex items-center">
                 <BsMap className="mr-1" />

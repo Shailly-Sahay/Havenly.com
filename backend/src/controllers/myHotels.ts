@@ -1,7 +1,8 @@
 import express, { Request, Response } from "express";
 import cloudinary from "cloudinary";
 import { validationResult } from "express-validator";
-import Hotel, { HotelType } from "../models/hotels";
+import Hotel from "../models/hotels";
+import { HotelType } from "../shared/types";
 
 const myHotels = {
   /**
