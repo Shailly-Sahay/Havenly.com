@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { userSchema } from "../models";
+import User from "../models/user";
 import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
 
@@ -18,14 +18,14 @@ const registerUser = {
 
     try {
       // Check if user already exists
-      let user = await userSchema.findOne({ email: req.body.email });
+      let user = await User.findOne({ email: req.body.email });
       if (user) {
         res.status(400).json({ message: "User already exists" });
         return;
       }
 
       // Create and save new user
-      user = new userSchema(req.body);
+      user = new User(req.body);
       await user.save();
 
       // Generate JWT token

@@ -37,4 +37,6 @@ myHotelRouter.post(
   myHotelsController.post
 );
 
+myHotelRouter.get("/", verifyToken, myHotelsController.getUserHotels);
+
 export default myHotelRouter;

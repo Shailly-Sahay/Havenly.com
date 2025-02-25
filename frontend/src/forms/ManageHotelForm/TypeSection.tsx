@@ -17,7 +17,7 @@ const TypeSection = () => {
         {hotelTypes.map((type) => (
           <label
             className={`cursor-pointer rounded-full px-4 py-4 text-label border bg-white transition-all ${
-              typeWatch === type ? " bg-[var(--secondary-color)] " : ""
+              typeWatch === type ? "bg-[var(--primary-color)] text-white" : ""
             }`}
           >
             <input
@@ -27,7 +27,9 @@ const TypeSection = () => {
               className="hidden"
             />
 
-            <span>{type}</span>
+            <span className={`${typeWatch === type ? " text-white" : ""}`}>
+              {type}
+            </span>
           </label>
         ))}
       </div>

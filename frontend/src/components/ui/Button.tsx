@@ -31,20 +31,20 @@ const Button: React.FC<ButtonProps> = ({
   const typeClasses =
     type === "primary" ? "bg-light text-dark" : "bg-primary text-light";
 
-  const commonClasses = `button rounded inline-block font-semibold text-center hover:opacity-90 transition-opacity ${sizeClasses[size]} ${className} ${typeClasses}`;
+  const classes = `button rounded inline-block font-semibold text-center hover:opacity-90 transition-opacity flex justify-center items-center ${sizeClasses[size]} ${className} ${typeClasses}`;
 
   return href ? (
-    <Link to={href} className={commonClasses} onClick={onClick}>
-      {text}
+    <Link to={href} className={classes} onClick={onClick}>
+      <span> {text}</span>
     </Link>
   ) : (
     <button
       disabled={disabled}
       type={action}
-      className={commonClasses}
+      className={classes}
       onClick={onClick}
     >
-      {text}
+      <span> {text}</span>
     </button>
   );
 };

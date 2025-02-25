@@ -1,8 +1,7 @@
 import express, { Request, Response } from "express";
 import cloudinary from "cloudinary";
 import { validationResult } from "express-validator";
-import { HotelType } from "../models/hotels";
-import { HotelSchema } from "../models";
+import Hotel, { HotelType } from "../models/hotels";
 
 const myHotels = {
   /**
@@ -30,7 +29,7 @@ const myHotels = {
       newHotel.userId = req.userId;
 
       // Save the new hotel to db
-      const hotel = new HotelSchema(newHotel);
+      const hotel = new Hotel(newHotel);
       await hotel.save();
 
       res.status(201).send(hotel);
@@ -38,6 +37,15 @@ const myHotels = {
     } catch (error) {
       res.status(500).json({ message: "Something went wrong" });
       return;
+    }
+  },
+
+  getUserHotels: async (req: Request, res: Response) => {
+    try {
+      const hotels = await Hotel.find({ userId: req.userId });
+      res.json(hotels);
+    } catch (error) {
+      res.status(500).json({ message: "Error fetching hotels" });
     }
   },
 };
