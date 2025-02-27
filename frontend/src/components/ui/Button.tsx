@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 interface ButtonProps {
-  text: string; // Button text
-  href?: string; // Link target, optional
-  size?: "small" | "medium" | "large"; // Button size
-  className?: string; // Additional CSS classes
+  text: string;
+  href?: string;
+  size?: "small" | "medium" | "large";
+  className?: string;
   disabled?: boolean;
   action?: "button" | "submit" | "reset";
   type?: "primary" | "secondary";
-  onClick?: () => void; // Function to trigger on click
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -34,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
   const classes = `button rounded inline-block font-semibold text-center hover:opacity-90 transition-opacity flex justify-center items-center ${sizeClasses[size]} ${className} ${typeClasses}`;
 
   return href ? (
-    <Link to={href} className={classes} onClick={onClick}>
+    <Link to={href} className={classes}>
       <span> {text}</span>
     </Link>
   ) : (

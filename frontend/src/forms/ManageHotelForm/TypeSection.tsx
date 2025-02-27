@@ -17,7 +17,7 @@ const TypeSection = () => {
         {hotelTypes.map((type) => (
           <label
             className={`cursor-pointer rounded-full px-4 py-4 text-label border bg-white transition-all ${
-              typeWatch === type ? "bg-[var(--primary-color)] text-white" : ""
+              typeWatch === type ? "bg-[#64182f] text-white" : ""
             }`}
           >
             <input

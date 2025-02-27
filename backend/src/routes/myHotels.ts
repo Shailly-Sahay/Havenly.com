@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request } from "express";
 import { myHotelsController } from "../controllers";
 import { verifyToken } from "../middlewares";
 import { body, check } from "express-validator";
@@ -38,5 +38,14 @@ myHotelRouter.post(
 );
 
 myHotelRouter.get("/", verifyToken, myHotelsController.getUserHotels);
+
+myHotelRouter.get("/:id", verifyToken, myHotelsController.getHotel);
+
+myHotelRouter.put(
+  "/:hotelId",
+  verifyToken,
+  upload.array("imageFiles"),
+  myHotelsController.updateHotel
+);
 
 export default myHotelRouter;
